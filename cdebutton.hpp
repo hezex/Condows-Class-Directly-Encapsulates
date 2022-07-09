@@ -4,25 +4,43 @@
 class CButton:public CBasic
 {
 	private:
-		int x,y;
-		int height,width;
-		char color;
-		char **fill;
+		int top,buttom;
+		int left,right;
+		charmatrix color;
+		charmatrix fill;
 	public:
-		CButton(int x,int y,int h,int w,int clr,char **fill);
+		CButton(int,int,int,int,charmatrix,charmatrix);
+		~CButton();
 		void ShowCondow();
 };
 
 
 //cdebutton.cpp
-CButton::CButton(int x,int y,int h,int w,int clr,char **fill):x(x),y(y),height(h),width(w),color(clr),fill(fill)
+CButton::CButton(int t,int b,int l,int r,charmatrix clr,charmatrix fill):top(t),buttom(b),left(l),right(r),
+color(r-l+1,b-t+1),fill(r-l+1,b-t+1)
 {
-	
+//	for(int i=0;i<=b-t;i++)
+//		for(int j=0;j<=r-l;j++)
+//		{
+//			this->color[i][j]=clr[i][j];
+//			this->fill[i][j]=fill[i][j];
+//		}
+	this->color=clr;
+	this->fill=fill;
 }
 
-void ShowCondow()
+void CButton::ShowCondow()
 {
-	this->SetOutputPos(x,y);
-	for(int i=0;i<=)
+	for(int i=top;i<=buttom;i++)
+		for(int j=left;j<=right;j++)
+		{
+			SetOutputPos(j,i);
+			SetOutputColor(color[i][j]);
+			printf("%c",fill[i][j]);
+		}
 }
 
+CButton::~CButton()
+{
+}
+ 

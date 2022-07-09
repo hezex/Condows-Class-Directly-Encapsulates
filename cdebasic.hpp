@@ -14,7 +14,7 @@ class CBasic
 		CBasic();
 		void SetOutputPos(short,short);
 		void SetOutputColor(char);
-		virtual void ShowCondow();
+		void ShowCondow();
 };
 
 
@@ -46,4 +46,6 @@ void CBasic::TranslateOutputInfo()
 	x=csbi.dwCursorPosition.X;
 	y=csbi.dwCursorPosition.Y;
 }
+
+void ShowCondow(){}
 
