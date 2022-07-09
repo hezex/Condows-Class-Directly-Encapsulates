@@ -12,6 +12,8 @@
 
 #include "cdebasic.hpp"
 
+#include "cdebutton.hpp"
+
 #undef _CDE__
 
 #else
