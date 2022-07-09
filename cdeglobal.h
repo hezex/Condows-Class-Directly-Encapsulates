@@ -10,8 +10,9 @@
 
 #define _CDE_VERSION__ 0x00
 
-#include "cdebasic.hpp"
+#include "charmatrix.hpp"
 
+#include "cdebasic.hpp"
 #include "cdebutton.hpp"
 
 #undef _CDE__
